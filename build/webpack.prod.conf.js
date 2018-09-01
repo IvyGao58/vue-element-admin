@@ -32,15 +32,15 @@ const webpackConfig = merge(baseWebpackConfig, {
     })
   },
   devtool: config.build.productionSourceMap ? config.build.devtool : false,
-  output: {
-    path: config.build.assetsRoot,
+  output: { // 生成环境  编译输出文件
+    path: config.build.assetsRoot, // 导出文件目录
     filename: utils.assetsPath('js/[name].[chunkhash:8].js'),
     chunkFilename: utils.assetsPath('js/[name].[chunkhash:8].js')
   },
   plugins: [
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
     new webpack.DefinePlugin({
-      'process.env': env
+      'process.env': env // 配置全局环境为生产环境
     }),
     // extract css into its own file
     new MiniCssExtractPlugin({
@@ -51,7 +51,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     // you can customize output by editing /index.html
     // see https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
-      filename: config.build.index,
+      filename: config.build.index, // 生成到文件名
       template: 'index.html',
       inject: true,
       favicon: resolve('favicon.ico'),

@@ -60,6 +60,7 @@ exports.cssLoaders = function(options) {
     return loaders
   }
   // https://vue-loader.vuejs.org/en/configurations/extract-css.html
+  // 使用动态样式语言
   return {
     css: generateLoaders(),
     postcss: generateLoaders(),

@@ -22,20 +22,20 @@ const createLintingRule = () => ({
 
 module.exports = {
   context: path.resolve(__dirname, '../'),
-  entry: {
+  entry: { // 入口文件
     app: './src/main.js'
   },
-  output: {
-    path: config.build.assetsRoot,
-    filename: '[name].js',
+  output: { // 编译输出文件
+    path: config.build.assetsRoot, // 导出目录的绝对路径
+    filename: '[name].js', // 导出文件的文件名
     publicPath:
       process.env.NODE_ENV === 'production'
         ? config.build.assetsPublicPath
         : config.dev.assetsPublicPath
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
-    alias: {
+    extensions: ['.js', '.vue', '.json'], // 自动解析确定的拓展名，导入模块时可以不带拓展名
+    alias: { // 创建import或者require的别名，方便简写导入路径
       '@': resolve('src')
     }
   },

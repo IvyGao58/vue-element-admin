@@ -46,16 +46,16 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       poll: config.dev.poll
     }
   },
-  plugins: [
+  plugins: [ // 配置插件
     new webpack.DefinePlugin({
       'process.env': require('../config/dev.env')
     }),
     new webpack.HotModuleReplacementPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: 'index.html',
-      inject: true,
+    new HtmlWebpackPlugin({ // html模板处理配置
+      filename: 'index.html', // 生成文件
+      template: 'index.html', // 模板文件
+      inject: true, // 注入的js文件将会被放在body标签中，当值为head时，会被放在head中。
       favicon: resolve('favicon.ico'),
       title: 'vue-element-admin',
       path: config.dev.assetsPublicPath + config.dev.assetsSubDirectory

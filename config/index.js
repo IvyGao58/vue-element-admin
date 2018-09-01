@@ -7,9 +7,9 @@ const path = require('path')
 module.exports = {
   dev: {
     // Paths
-    assetsSubDirectory: 'static',
+    assetsSubDirectory: 'static', //虚拟静态资源
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {}, // 服务器代理
 
     // Various Dev Server settings
 
@@ -47,11 +47,11 @@ module.exports = {
 
   build: {
     // Template for index.html
-    index: path.resolve(__dirname, '../dist/index.html'),
+    index: path.resolve(__dirname, '../dist/index.html'), // 生成打包模板
 
     // Paths
-    assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsSubDirectory: 'static',
+    assetsRoot: path.resolve(__dirname, '../dist'), // 打包根路径
+    assetsSubDirectory: 'static', // 打包静态资源地址
 
     /**
      * You can set by youself according to actual condition
@@ -60,7 +60,7 @@ module.exports = {
      * then assetsPublicPath should be set to "/bar/".
      * In most cases please use '/' !!!
      */
-    assetsPublicPath: '/',
+    assetsPublicPath: '/', // 公共路径
 
     /**
      * Source Maps
